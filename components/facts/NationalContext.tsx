@@ -18,7 +18,7 @@ export default function NationalContext() {
             National Context
           </p>
 
-          <h2 className="mt-4 text-white font-serif text-4xl md:text-5xl font-bold">
+          <h2 className="mt-4 text-white font-serif text-[clamp(2.2rem,5vw,3.8rem)] font-bold">
             The Data Center Economy Is Not Slowing Down.
             The Question Is Who Benefits.
           </h2>

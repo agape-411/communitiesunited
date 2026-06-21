@@ -101,8 +101,8 @@ export default function Hero() {
             <h1
               className="
                 mt-5
-                text-[clamp(2.8rem,9vw,5.5rem)]
-                font-black
+                text-[clamp(2.5rem,9vw,5.2rem)]
+                font-bold
                 leading-[0.95]
                 text-white
               "
@@ -118,7 +118,7 @@ export default function Hero() {
             {/* Main Statement */}
             <p
               className="
-                mt-8
+                mt-6
                 text-lg
                 sm:text-xl
                 md:text-2xl

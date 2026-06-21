@@ -102,7 +102,7 @@ export default function WhySection() {
               text-[#16352A]
               font-bold
               leading-tight
-              text-[clamp(2rem,6vw,3.5rem)]
+              text-[clamp(2.rem,5vw,3.6rem)]
               max-w-4xl
             "
           >

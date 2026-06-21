@@ -65,7 +65,7 @@ export default function TaxRevenue() {
             className='
               font-serif
               text-[#16352A]
-              text-4xl
+              text-[clamp(2.2rem,5vw,3.8rem)]
               md:text-5xl
               font-bold
               leading-tight
