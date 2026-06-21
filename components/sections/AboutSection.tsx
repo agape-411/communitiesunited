@@ -47,16 +47,30 @@ export default function AboutCUFD() {
       id="about"
       className="
         bg-[#F6F0E6]
-        py-24
-        lg:py-32
+        py-16
+        sm:py-20
+        lg:py-28
+        xl:py-32
+        overflow-hidden
       "
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div
+        className="
+          max-w-7xl
+          mx-auto
+          px-5
+          sm:px-6
+          lg:px-8
+          xl:px-10
+        "
+      >
         <div
           className="
             grid
             lg:grid-cols-[1fr_1.1fr]
-            gap-16
+            gap-12
+            lg:gap-16
+            xl:gap-20
             items-start
           "
         >
@@ -66,7 +80,7 @@ export default function AboutCUFD() {
             variants={fadeLeft}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <p
               className="
@@ -74,6 +88,7 @@ export default function AboutCUFD() {
                 uppercase
                 tracking-[0.25em]
                 text-xs
+                sm:text-sm
                 font-bold
               "
             >
@@ -86,8 +101,9 @@ export default function AboutCUFD() {
                 text-[#16352A]
                 font-serif
                 font-bold
-                text-4xl
-                md:text-5xl
+                leading-[1.05]
+                text-[clamp(2rem,6vw,4rem)]
+                max-w-3xl
               "
             >
               Who We Are
@@ -98,8 +114,10 @@ export default function AboutCUFD() {
                 mt-8
                 space-y-6
                 text-gray-700
-                text-lg
+                text-base
+                sm:text-lg
                 leading-8
+                max-w-2xl
               "
             >
               <p>
@@ -113,13 +131,21 @@ export default function AboutCUFD() {
 
               <p>
                 The name says what we stand for.
-                <em> Communities </em>
+                <em className="font-medium text-[#16352A]">
+                  {" "}Communities{" "}
+                </em>
                 — plural, because this corridor is Rocky Mount,
                 and because we are a partnership of distinct
                 community institutions, not a single front group.
-                <em> United </em>
+
+                <em className="font-medium text-[#16352A]">
+                  {" "}United{" "}
+                </em>
                 — institutions standing together to set terms.
-                <em> Fair Development </em>
+
+                <em className="font-medium text-[#16352A]">
+                  {" "}Fair Development{" "}
+                </em>
                 — we do not pretend development is automatically
                 good. We stake our identity on whether the terms
                 are fair and enforceable.
@@ -143,7 +169,7 @@ export default function AboutCUFD() {
             variants={fadeRight}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <p
               className="
@@ -151,8 +177,10 @@ export default function AboutCUFD() {
                 uppercase
                 tracking-[0.25em]
                 text-xs
+                sm:text-sm
                 font-bold
-                mb-8
+                mb-6
+                sm:mb-8
               "
             >
               Our Principles
@@ -162,16 +190,22 @@ export default function AboutCUFD() {
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.1 }}
               className="space-y-8"
             >
               {principles.map((principle) => (
                 <motion.div
                   key={principle.number}
                   variants={fadeUp}
+                  whileHover={{
+                    x: 6,
+                  }}
                   className="
                     flex
-                    gap-6
+                    flex-col
+                    sm:flex-row
+                    gap-4
+                    sm:gap-6
                     pb-8
                     border-b
                     border-[#DDD2C4]
@@ -181,29 +215,35 @@ export default function AboutCUFD() {
                     className="
                       text-[#C89A3E]
                       text-3xl
+                      sm:text-4xl
                       font-black
-                      min-w-[60px]
+                      shrink-0
+                      min-w-[70px]
                     "
                   >
                     {principle.number}
                   </div>
 
                   <div>
-                    <h4
+                    <h3
                       className="
                         text-[#16352A]
+                        font-serif
+                        font-bold
                         text-xl
-                        font-semibold
+                        sm:text-2xl
+                        leading-tight
                         mb-3
                       "
                     >
                       {principle.title}
-                    </h4>
+                    </h3>
 
                     <p
                       className="
                         text-gray-700
                         leading-7
+                        text-base
                       "
                     >
                       {principle.description}

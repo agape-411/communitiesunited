@@ -41,15 +41,20 @@ export default function Pillars() {
       id="pillars"
       className="
         bg-[#16352A]
-        py-24
-        lg:py-32
+        py-16
+        sm:py-20
+        lg:py-28
+        xl:py-32
+        overflow-hidden
       "
     >
       <div
         className="
           mx-auto
           max-w-7xl
-          px-6
+          px-5
+          sm:px-6
+          lg:px-8
         "
       >
         {/* Header */}
@@ -57,15 +62,17 @@ export default function Pillars() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-3xl"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+          className="max-w-4xl"
         >
           <p
             className="
               text-[#C89A3E]
               uppercase
               tracking-[0.22em]
-              text-sm
+              text-xs
+              sm:text-sm
               font-bold
             "
           >
@@ -78,23 +85,26 @@ export default function Pillars() {
               text-white
               font-serif
               font-bold
-              leading-tight
-              text-4xl
-              md:text-5xl
+              leading-[1.05]
+              text-[clamp(2rem,6vw,3.5rem)]
+              max-w-4xl
             "
           >
             Five Things Rocky Mount
-            <br />
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
             Requires. In Writing.
           </h2>
 
           <p
             className="
               mt-6
-              text-white/60
-              text-xl
-              leading-relaxed
-              max-w-2xl
+              text-white/70
+              text-base
+              sm:text-lg
+              lg:text-xl
+              leading-8
+              max-w-3xl
             "
           >
             These are not aspirations. They are requirements.
@@ -108,11 +118,14 @@ export default function Pillars() {
 
         <div
           className="
-            mt-14
+            mt-12
+            sm:mt-14
             grid
+            grid-cols-1
             md:grid-cols-2
             xl:grid-cols-3
-            gap-6
+            gap-5
+            sm:gap-6
           "
         >
           {pillars.map((pillar, index) => (
@@ -120,23 +133,36 @@ export default function Pillars() {
               key={pillar.title}
               initial={{
                 opacity: 0,
-                y: 25,
+                y: 30,
               }}
               whileInView={{
                 opacity: 1,
                 y: 0,
               }}
-              viewport={{ once: true }}
+              viewport={{
+                once: true,
+                amount: 0.15,
+              }}
               transition={{
+                duration: 0.6,
                 delay: index * 0.08,
               }}
+              whileHover={{
+                y: -6,
+              }}
               className="
-                bg-white/5.5
+                bg-white/5
                 border
                 border-white/10
                 border-t-[3px]
                 border-t-[#C89A3E]
-                p-7
+                backdrop-blur-sm
+                p-6
+                sm:p-7
+                lg:p-8
+                transition-all
+                duration-300
+                min-h-full
               "
             >
               <h3
@@ -144,8 +170,8 @@ export default function Pillars() {
                   text-[#C89A3E]
                   font-serif
                   font-bold
-                  text-xl
-                  leading-snug
+                  text-[clamp(1.35rem,4vw,1.7rem)]
+                  leading-tight
                   mb-4
                 "
               >
@@ -154,8 +180,9 @@ export default function Pillars() {
 
               <p
                 className="
-                  text-white/70
-                  text-base
+                  text-white/75
+                  text-sm
+                  sm:text-base
                   leading-7
                 "
               >
@@ -164,12 +191,17 @@ export default function Pillars() {
 
               <div
                 className="
-                  mt-5
-                  text-sm
+                  mt-6
+                  pt-5
+                  border-t
+                  border-white/10
+                  text-[11px]
+                  sm:text-xs
                   uppercase
                   tracking-[0.12em]
                   font-bold
-                  text-[#C89A3E]/70
+                  text-[#C89A3E]/80
+                  leading-relaxed
                 "
               >
                 {pillar.basis}

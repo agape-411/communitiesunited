@@ -20,10 +20,35 @@ export default function JoinSection() {
   return (
     <section
       id="join"
-      className="bg-[#F6F0E6] py-24 lg:py-32"
+      className="
+        bg-[#F6F0E6]
+        py-16
+        sm:py-20
+        lg:py-28
+        xl:py-32
+        overflow-hidden
+      "
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid lg:grid-cols-[1fr_560px] gap-16 items-start xl:gap-24">
+      <div
+        className="
+          max-w-7xl
+          mx-auto
+          px-5
+          sm:px-6
+          lg:px-8
+          xl:px-10
+        "
+      >
+        <div
+          className="
+            grid
+            lg:grid-cols-[1fr_560px]
+            gap-12
+            lg:gap-16
+            xl:gap-24
+            items-start
+          "
+        >
           {/* LEFT */}
 
           <motion.div
@@ -38,6 +63,7 @@ export default function JoinSection() {
                 uppercase
                 tracking-[0.25em]
                 text-xs
+                sm:text-sm
                 font-bold
               "
             >
@@ -50,22 +76,24 @@ export default function JoinSection() {
                 text-[#16352A]
                 font-serif
                 font-bold
-                leading-tight
-                text-4xl
-                md:text-5xl
-                lg:text-6xl
+                leading-[1.05]
+                text-[clamp(2rem,6vw,4rem)]
+                max-w-4xl
               "
             >
               Add Your Voice.
-              <br />
+              <br className="hidden sm:block" />
+              <span className="sm:hidden"> </span>
               Rocky Mount Is Listening.
             </h2>
 
             <p
               className="
-                mt-8
+                mt-6
+                sm:mt-8
                 text-gray-700
-                text-lg
+                text-base
+                sm:text-lg
                 leading-8
                 max-w-2xl
               "
@@ -77,9 +105,11 @@ export default function JoinSection() {
 
             <p
               className="
-                mt-6
+                mt-5
+                sm:mt-6
                 text-gray-700
-                text-lg
+                text-base
+                sm:text-lg
                 leading-8
                 max-w-2xl
               "
@@ -98,15 +128,15 @@ export default function JoinSection() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="mt-10 space-y-4"
+              className="mt-8 sm:mt-10 space-y-5"
             >
               {benefits.map((item) => (
                 <motion.div
                   key={item}
                   variants={fadeUp}
-                  className="flex gap-4"
+                  className="flex gap-4 items-start"
                 >
-                  <span className="text-[#C89A3E] font-bold">
+                  <span className="text-[#C89A3E] font-bold mt-1">
                     →
                   </span>
 
@@ -121,10 +151,12 @@ export default function JoinSection() {
 
             <div
               className="
-                mt-12
+                mt-10
+                sm:mt-12
                 border-l-4
                 border-[#C89A3E]
-                pl-6
+                pl-5
+                sm:pl-6
               "
             >
               <p
@@ -132,9 +164,9 @@ export default function JoinSection() {
                   text-[#16352A]
                   font-serif
                   italic
-                  text-2xl
-                  md:text-3xl
+                  font-medium
                   leading-relaxed
+                  text-[clamp(1.6rem,4vw,2.2rem)]
                 "
               >
                 Fair terms.
@@ -149,287 +181,255 @@ export default function JoinSection() {
           {/* FORM */}
 
           <motion.div
-  variants={fadeRight}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true, amount: 0.2 }}
->
-  <div
-    className="
-      bg-white
-      border
-      border-[#DED4C5]
-      shadow-sm
-      overflow-hidden
-    "
-  >
-    {/* Top Accent */}
-
-    <div className="h-1 bg-[#C89A3E]" />
-
-    <div className="p-8 lg:p-10">
-      <h3
-        className="
-          text-[#16352A]
-          text-2xl
-          font-semibold
-        "
-      >
-        Join the Coalition
-      </h3>
-
-      <p
-        className="
-          mt-4
-          text-gray-600
-          leading-7
-        "
-      >
-        Join thousands of residents, workers,
-        parents, business owners, and community
-        leaders committed to ensuring that major
-        investment benefits Rocky Mount while
-        protecting our future.
-      </p>
-
-      {/* Benefits */}
-
-      <div
-        className="
-          mt-6
-          rounded-sm
-          bg-[#F6F0E6]
-          border
-          border-[#E6DACA]
-          p-5
-        "
-      >
-        <p
-          className="
-            text-[#16352A]
-            font-semibold
-            mb-3
-          "
-        >
-          As a coalition member you'll receive:
-        </p>
-
-        <ul className="space-y-2">
-          {[
-            "Development agreement updates",
-            "Council meeting alerts",
-            "Public hearing opportunities",
-            "Community event invitations",
-          ].map((item) => (
-            <li
-              key={item}
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{
+              y: -4,
+            }}
+          >
+            <div
               className="
-                flex
-                gap-3
-                text-gray-700
-                text-sm
+                bg-white
+                border
+                border-[#DED4C5]
+                shadow-sm
+                overflow-hidden
               "
             >
-              <span className="text-[#C89A3E]">
-                →
-              </span>
+              <div className="h-1 bg-[#C89A3E]" />
 
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
+              <div className="p-6 sm:p-8 lg:p-10">
+                <h3
+                  className="
+                    text-[#16352A]
+                    font-serif
+                    font-bold
+                    text-[clamp(1.6rem,4vw,2rem)]
+                  "
+                >
+                  Join the Coalition
+                </h3>
 
-      {/* Form */}
+                <p
+                  className="
+                    mt-4
+                    text-gray-600
+                    text-sm
+                    sm:text-base
+                    leading-7
+                  "
+                >
+                  Join thousands of residents, workers,
+                  parents, business owners, and community
+                  leaders committed to ensuring that major
+                  investment benefits Rocky Mount while
+                  protecting our future.
+                </p>
 
-      <form className="mt-8 space-y-5">
-        <div className="grid md:grid-cols-2 gap-4">
-          <input
-            type="text"
-            placeholder="First Name"
-            className="
-              border
-              border-gray-300
-              px-4
-              py-3
-              w-full
-              outline-none
-              focus:border-[#C89A3E]
-            "
-          />
+                {/* BENEFITS BOX */}
 
-          <input
-            type="text"
-            placeholder="Last Name"
-            className="
-              border
-              border-gray-300
-              px-4
-              py-3
-              w-full
-              outline-none
-              focus:border-[#C89A3E]
-            "
-          />
-        </div>
+                <div
+                  className="
+                    mt-6
+                    rounded-sm
+                    bg-[#F6F0E6]
+                    border
+                    border-[#E6DACA]
+                    p-5
+                  "
+                >
+                  <p className="text-[#16352A] font-semibold mb-3">
+                    As a coalition member you'll receive:
+                  </p>
 
-        <input
-          type="email"
-          placeholder="Email Address"
-          className="
-            border
-            border-gray-300
-            px-4
-            py-3
-            w-full
-            outline-none
-            focus:border-[#C89A3E]
-          "
-        />
+                  <ul className="space-y-3">
+                    {[
+                      "Development agreement updates",
+                      "Council meeting alerts",
+                      "Public hearing opportunities",
+                      "Community event invitations",
+                    ].map((item) => (
+                      <li
+                        key={item}
+                        className="
+                          flex
+                          gap-3
+                          text-gray-700
+                          text-sm
+                          leading-6
+                        "
+                      >
+                        <span className="text-[#C89A3E]">
+                          →
+                        </span>
 
-        <input
-          type="tel"
-          placeholder="Phone Number"
-          className="
-            border
-            border-gray-300
-            px-4
-            py-3
-            w-full
-            outline-none
-            focus:border-[#C89A3E]
-          "
-        />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-        <input
-          type="text"
-          placeholder="ZIP Code"
-          className="
-            border
-            border-gray-300
-            px-4
-            py-3
-            w-full
-            outline-none
-            focus:border-[#C89A3E]
-          "
-        />
+                {/* FORM */}
 
-        {/* Participation */}
+                <form className="mt-8 space-y-5">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {[
+                      "First Name",
+                      "Last Name",
+                    ].map((placeholder) => (
+                      <input
+                        key={placeholder}
+                        type="text"
+                        placeholder={placeholder}
+                        className="
+                          border
+                          border-gray-300
+                          px-4
+                          py-3.5
+                          w-full
+                          rounded-none
+                          outline-none
+                          text-base
+                          appearance-none
+                          focus:border-[#C89A3E]
+                          transition-colors
+                        "
+                      />
+                    ))}
+                  </div>
 
-        <div
-          className="
-            border
-            border-[#E6DACA]
-            p-4
-          "
-        >
-          <p
-            className="
-              text-[#16352A]
-              font-medium
-              mb-3
-            "
-          >
-            I'd like to:
-          </p>
+                  {[
+                    "Email Address",
+                    "Phone Number",
+                    "ZIP Code",
+                  ].map((placeholder) => (
+                    <input
+                      key={placeholder}
+                      type="text"
+                      placeholder={placeholder}
+                      className="
+                        border
+                        border-gray-300
+                        px-4
+                        py-3.5
+                        w-full
+                        rounded-none
+                        outline-none
+                        text-base
+                        appearance-none
+                        focus:border-[#C89A3E]
+                        transition-colors
+                      "
+                    />
+                  ))}
 
-          <div className="space-y-2">
-            {[
-              "Receive updates",
-              "Attend community meetings",
-              "Volunteer",
-              "Speak at public hearings",
-            ].map((item) => (
-              <label
-                key={item}
-                className="
-                  flex
-                  items-center
-                  gap-3
-                  text-sm
-                  text-gray-700
-                "
-              >
-                <input
-                  type="checkbox"
-                  className="accent-[#C89A3E]"
-                />
+                  {/* PARTICIPATION */}
 
-                {item}
-              </label>
-            ))}
-          </div>
-        </div>
+                  <div
+                    className="
+                      border
+                      border-[#E6DACA]
+                      p-5
+                    "
+                  >
+                    <p className="text-[#16352A] font-medium mb-4">
+                      I'd like to:
+                    </p>
 
-        <textarea
-          rows={4}
-          placeholder="Why are you joining CUFD?"
-          className="
-            border
-            border-gray-300
-            px-4
-            py-3
-            w-full
-            resize-none
-            outline-none
-            focus:border-[#C89A3E]
-          "
-        />
+                    <div className="space-y-3">
+                      {[
+                        "Receive updates",
+                        "Attend community meetings",
+                        "Volunteer",
+                        "Speak at public hearings",
+                      ].map((item) => (
+                        <label
+                          key={item}
+                          className="
+                            flex
+                            items-center
+                            gap-3
+                            text-sm
+                            text-gray-700
+                            cursor-pointer
+                          "
+                        >
+                          <input
+                            type="checkbox"
+                            className="
+                              h-4
+                              w-4
+                              accent-[#C89A3E]
+                              shrink-0
+                            "
+                          />
 
-        <button
-          type="submit"
-          className="
-            w-full
-            bg-[#16352A]
-            text-white
-            py-4
-            font-semibold
-            transition-all
-            duration-300
-            hover:bg-[#214737]
-          "
-        >
-          Join Communities United for Fair Development
-        </button>
-      </form>
+                          {item}
+                        </label>
+                      ))}
+                    </div>
+                  </div>
 
-      {/* Disclosure */}
+                  <textarea
+                    rows={4}
+                    placeholder="Why are you joining CUFD?"
+                    className="
+                      border
+                      border-gray-300
+                      px-4
+                      py-3
+                      w-full
+                      resize-none
+                      rounded-none
+                      outline-none
+                      appearance-none
+                      focus:border-[#C89A3E]
+                    "
+                  />
 
-      <div
-        className="
-          mt-6
-          pt-6
-          border-t
-          border-[#E5D9CA]
-        "
-      >
-        <p
-          className="
-            text-xs
-            leading-6
-            text-gray-500
-          "
-        >
-          By joining CUFD, you agree to receive
-          updates regarding community meetings,
-          public hearings, development agreement
-          negotiations, and coalition activities.
-        </p>
+                  <button
+                    type="submit"
+                    className="
+                      w-full
+                      bg-[#16352A]
+                      text-white
+                      py-4
+                      font-semibold
+                      transition-all
+                      duration-300
+                      hover:bg-[#214737]
+                    "
+                  >
+                    Join Communities United for Fair Development
+                  </button>
+                </form>
 
-        <p
-          className="
-            mt-3
-            text-xs
-            text-gray-500
-          "
-        >
-          Your information is never sold or shared.
-        </p>
-      </div>
-    </div>
-  </div>
-</motion.div>
+                {/* DISCLOSURE */}
+
+                <div
+                  className="
+                    mt-6
+                    pt-6
+                    border-t
+                    border-[#E5D9CA]
+                  "
+                >
+                  <p className="text-xs leading-6 text-gray-500">
+                    By joining CUFD, you agree to receive
+                    updates regarding community meetings,
+                    public hearings, development agreement
+                    negotiations, and coalition activities.
+                  </p>
+
+                  <p className="mt-3 text-xs text-gray-500">
+                    Your information is never sold or shared.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

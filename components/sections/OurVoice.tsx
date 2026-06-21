@@ -35,11 +35,25 @@ export default function OurVoice() {
     <section
       className="
         bg-[#173629]
-        py-24
-        lg:py-32
+        py-16
+        sm:py-20
+        lg:py-28
+        xl:py-32
+        overflow-hidden
       "
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div
+        className="
+          max-w-7xl
+          mx-auto
+          px-5
+          sm:px-6
+          lg:px-8
+          xl:px-10
+        "
+      >
+        {/* Header */}
+
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -53,6 +67,7 @@ export default function OurVoice() {
               uppercase
               tracking-[0.25em]
               text-xs
+              sm:text-sm
               font-bold
             "
           >
@@ -64,18 +79,20 @@ export default function OurVoice() {
               mt-4
               text-white
               font-serif
-              font-bold
-              leading-tight
-              text-4xl
-              md:text-5xl
-              lg:text-6xl
+              font-semibold
+              leading-[1.05]
+              text-[clamp(2rem,6vw,4rem)]
+              max-w-5xl
             "
           >
-            Rocky Mount Sets the Terms.
-            <br />
-            Rocky Mount Holds Them to It.
+            Rocky Mount Sets the Terms
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
+            Rocky Mount Holds Them to It
           </h2>
         </motion.div>
+
+        {/* Cards */}
 
         <motion.div
           variants={staggerContainer}
@@ -83,35 +100,47 @@ export default function OurVoice() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
           className="
-            mt-16
+            mt-12
+            sm:mt-16
             grid
+            grid-cols-1
             md:grid-cols-2
             xl:grid-cols-3
-            gap-6
+            gap-5
+            sm:gap-6
           "
         >
           {taglines.map((item) => (
-            <motion.div
+            <motion.article
               key={item.label}
               variants={fadeUp}
+              whileHover={{ y: -6 }}
               className="
-                bg-white/4
+                bg-white/[0.04]
                 border
                 border-white/10
                 border-t-[3px]
                 border-t-[#C89A3E]
-                p-8
+                backdrop-blur-sm
+                p-6
+                sm:p-8
                 transition-all
                 duration-300
-                hover:-translate-y-1
+                min-h-[220px]
+                flex
+                flex-col
+                justify-start
               "
             >
+              {/* Label */}
+
               <div
                 className="
                   text-[#C89A3E]
                   uppercase
                   tracking-[0.15em]
-                  text-xs
+                  text-[11px]
+                  sm:text-xs
                   font-bold
                   mb-4
                 "
@@ -119,17 +148,20 @@ export default function OurVoice() {
                 {item.label}
               </div>
 
-              <p
+              {/* Quote */}
+
+              <h3
                 className="
                   text-white
-                  text-lg
+                  font-serif
+                  font-semibold
+                  text-[clamp(1.25rem,3vw,1.5rem)]
                   leading-relaxed
-                  font-medium
                 "
               >
-                "{item.line}"
-              </p>
-            </motion.div>
+                &ldquo;{item.line}&rdquo;
+              </h3>
+            </motion.article>
           ))}
         </motion.div>
       </div>

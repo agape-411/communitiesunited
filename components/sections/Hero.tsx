@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const priorities = [
-  "Jobs paying $28–$45/hr built by local hands",
+  "Construction jobs paying $28–$45/hr built by local hands",
   "New school revenue — without new taxes on families",
   "Contracts for local businesses & suppliers",
-  "Developer-funded workforce training through OIC & ECC",
+  "Specialized workforce training for high-tech and construction careers — built for Rocky Mount residents",
   "Written water and environmental protections",
   "Grid-upgrade costs on the developer, not our bills",
   "Enforceable terms — not developer promises",
@@ -22,13 +22,13 @@ export default function Hero() {
         relative
         overflow-hidden
         bg-[#16352A]
-        min-h-screen
+        min-h-[100svh]
         flex
         items-center
       "
     >
       {/* Background Texture */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(200,150,62,.18),transparent_40%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(200,150,62,.08),transparent_35%)]" />
       </div>
@@ -40,35 +40,43 @@ export default function Hero() {
           mx-auto
           w-full
           max-w-[1400px]
-          px-6
+          px-5
+          sm:px-6
           lg:px-10
-          py-20
+          py-16
+          sm:py-20
+          lg:py-24
         "
       >
         <div
           className="
             grid
             lg:grid-cols-[1.1fr_0.9fr]
-            gap-14
+            gap-10
+            lg:gap-14
             xl:gap-20
             items-center
           "
         >
-          {/* LEFT */}
+          {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             {/* Logo */}
-
             <div className="mb-8">
               <Image
                 src="/images/community.png"
-                alt="CUFD"
+                alt="Communities United for Fair Development logo"
                 width={140}
                 height={140}
+                priority
                 className="
+                  w-[100px]
+                  sm:w-[120px]
+                  lg:w-[140px]
+                  h-auto
                   object-contain
                   drop-shadow-[0_4px_18px_rgba(0,0,0,0.35)]
                 "
@@ -76,12 +84,12 @@ export default function Hero() {
             </div>
 
             {/* Eyebrow */}
-
             <p
               className="
                 uppercase
                 tracking-[0.25em]
-                text-[13px]
+                text-[11px]
+                sm:text-[13px]
                 font-semibold
                 text-[#C89A3E]
               "
@@ -90,13 +98,10 @@ export default function Hero() {
             </p>
 
             {/* Heading */}
-
             <h1
               className="
                 mt-5
-                text-5xl
-                sm:text-6xl
-                lg:text-7xl
+                text-[clamp(2.8rem,9vw,5.5rem)]
                 font-black
                 leading-[0.95]
                 text-white
@@ -111,16 +116,20 @@ export default function Hero() {
             </h1>
 
             {/* Main Statement */}
-
             <p
               className="
                 mt-8
-                text-xl
+                text-lg
+                sm:text-xl
                 md:text-2xl
                 leading-relaxed
                 text-white
-                font-medium border-l-4 border-amber-400
-                pl-6
+                font-medium
+                border-l-4
+                border-[#C89A3E]
+                pl-5
+                sm:pl-6
+                max-w-3xl
               "
             >
               We're not against development.
@@ -129,36 +138,40 @@ export default function Hero() {
             </p>
 
             {/* Supporting Statement */}
-
             <p
               className="
                 mt-6
                 max-w-2xl
-                text-lg
+                text-base
+                sm:text-lg
                 leading-relaxed
-                text-white/70 pl-10
+                text-white/70
+                pl-0
+                md:pl-10
               "
             >
-              Enforceable protections first.
-              Promises don't build trust —
-              terms in writing do.
+              Enforceable protections first. Promises don't
+              build trust — terms in writing do.
             </p>
 
-            {/* CTA */}
-
+            {/* CTA Buttons */}
             <div
               className="
-                mt-7
+                mt-8
                 flex
-                flex-wrap
+                flex-col
+                sm:flex-row
                 gap-4
               "
             >
               <Link
                 href="#join"
                 className="
+                  w-full
+                  sm:w-auto
                   inline-flex
                   items-center
+                  justify-center
                   gap-2
                   bg-[#C89A3E]
                   text-[#16352A]
@@ -168,16 +181,23 @@ export default function Hero() {
                   transition-all
                   duration-300
                   hover:-translate-y-0.5
+                  hover:shadow-lg
                 "
               >
                 JOIN THE COALITION
 
-                <ArrowRight size={18} />
+                <ArrowRight
+                  size={18}
+                  className="flex-shrink-0"
+                />
               </Link>
 
               <Link
                 href="#council"
                 className="
+                  w-full
+                  sm:w-auto
+                  text-center
                   border
                   border-white/25
                   text-white
@@ -194,7 +214,6 @@ export default function Hero() {
           </motion.div>
 
           {/* RIGHT CARD */}
-
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -202,6 +221,7 @@ export default function Hero() {
               duration: 0.8,
               delay: 0.2,
             }}
+            className="mt-10 lg:mt-0"
           >
             <div
               className="
@@ -211,9 +231,9 @@ export default function Hero() {
                 border-t-[#C89A3E]
                 bg-white/4
                 backdrop-blur-md
-                p-8
+                p-6
+                md:p-8
                 lg:p-10
-                relative hidden lg:block
               "
             >
               <h3
@@ -221,7 +241,8 @@ export default function Hero() {
                   text-[#C89A3E]
                   uppercase
                   tracking-[0.18em]
-                  text-base
+                  text-sm
+                  sm:text-base
                   font-semibold
                   mb-7
                 "
@@ -248,12 +269,15 @@ export default function Hero() {
                         text-[#C89A3E]
                         font-bold
                         mt-[2px]
+                        flex-shrink-0
                       "
                     >
                       →
                     </span>
 
-                    <span>{item}</span>
+                    <span className="text-sm sm:text-base">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>

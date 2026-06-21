@@ -41,17 +41,29 @@ export default function Framework() {
       id="standards"
       className="
         bg-[#F6F0E6]
-        py-24
-        lg:py-32
+        py-16
+        sm:py-20
+        lg:py-28
+        xl:py-32
+        overflow-hidden
       "
     >
-      <div className="mx-auto max-w-7xl px-6">
+      <div
+        className="
+          mx-auto
+          max-w-7xl
+          px-5
+          sm:px-6
+          lg:px-8
+        "
+      >
         {/* Header */}
 
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
           className="max-w-4xl"
         >
           <p
@@ -60,6 +72,7 @@ export default function Framework() {
               uppercase
               tracking-[0.22em]
               text-xs
+              sm:text-sm
               font-bold
             "
           >
@@ -72,13 +85,14 @@ export default function Framework() {
               text-[#16352A]
               font-serif
               font-bold
-              text-4xl
-              md:text-5xl
-              leading-tight
+              leading-[1.05]
+              text-[clamp(2rem,6vw,3.5rem)]
+              max-w-4xl
             "
           >
             Grid-Positive Community
-            <br />
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
             Integration Framework
           </h2>
 
@@ -86,8 +100,9 @@ export default function Framework() {
             className="
               mt-6
               text-gray-700
-              text-lg
-              leading-relaxed
+              text-base
+              sm:text-lg
+              leading-8
               max-w-3xl
             "
           >
@@ -100,53 +115,75 @@ export default function Framework() {
 
         {/* Framework Table */}
 
-        <div className="mt-14">
+        <div className="mt-12 sm:mt-14">
           {standards.map((item, index) => (
             <motion.div
               key={item.number}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{
+                once: true,
+                amount: 0.15,
+              }}
               transition={{
+                duration: 0.6,
                 delay: index * 0.08,
               }}
               className="
                 border-t
                 border-[#D8CFC2]
                 py-8
+                sm:py-10
               "
             >
               <div
                 className="
                   grid
-                  md:grid-cols-[90px_280px_1fr]
-                  gap-6
+                  grid-cols-1
+                  md:grid-cols-[80px_240px_1fr]
+                  lg:grid-cols-[90px_280px_1fr]
+                  gap-4
+                  md:gap-6
+                  lg:gap-8
                 "
               >
+                {/* Number */}
+
                 <div
                   className="
                     text-[#C89A3E]
                     text-3xl
+                    sm:text-4xl
                     font-black
+                    leading-none
                   "
                 >
                   {item.number}
                 </div>
+
+                {/* Label */}
 
                 <div
                   className="
                     text-[#16352A]
                     font-semibold
                     text-lg
+                    sm:text-xl
+                    leading-snug
                   "
                 >
                   {item.label}
                 </div>
 
+                {/* Description */}
+
                 <div
                   className="
                     text-gray-700
-                    leading-8
+                    text-sm
+                    sm:text-base
+                    leading-7
+                    sm:leading-8
                   "
                 >
                   {item.description}
@@ -154,6 +191,10 @@ export default function Framework() {
               </div>
             </motion.div>
           ))}
+
+          {/* Bottom Border */}
+
+          <div className="border-t border-[#D8CFC2]" />
         </div>
       </div>
     </section>

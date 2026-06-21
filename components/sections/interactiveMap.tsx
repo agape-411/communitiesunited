@@ -19,9 +19,11 @@ const position: [number, number] = [
 
 export default function InteractiveMap() {
   useEffect(() => {
-    // _getIconUrl is an internal property on Leaflet's Icon.Default prototype.
-    // Cast to a narrower, non-any type to avoid using `any`.
-    delete (L.Icon.Default.prototype as unknown as { _getIconUrl?: string })._getIconUrl;
+    delete (
+      L.Icon.Default.prototype as unknown as {
+        _getIconUrl?: string;
+      }
+    )._getIconUrl;
 
     L.Icon.Default.mergeOptions({
       iconRetinaUrl:
@@ -35,20 +37,27 @@ export default function InteractiveMap() {
 
   return (
     <MapContainer
-      center={position}
-      zoom={14}
-      zoomControl={false}
-      scrollWheelZoom={false}
-      className="h-125 lg:h-162.5 w-full z-0"
-    >
-      {/* ESRI SATELLITE IMAGERY */}
-
+  center={position}
+  zoom={14}
+  zoomControl={false}
+  scrollWheelZoom={false}
+  dragging={true}
+  touchZoom={false}
+  doubleClickZoom={false}
+  boxZoom={false}
+  keyboard={false}
+  inertia={true}
+  className="h-full w-full z-0"
+  style={{
+    height: "100%",
+    width: "100%",
+    touchAction: "pan-y",
+  }}
+>
       <TileLayer
         attribution="Tiles © Esri"
         url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
       />
-
-      {/* LABELS */}
 
       <TileLayer
         attribution="Tiles © Esri"

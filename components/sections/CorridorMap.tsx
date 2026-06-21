@@ -190,11 +190,16 @@ export default function CorridorMap() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="
-              overflow-hidden
-              rounded-xl
-              border border-[#DED4C5]
-              shadow-xl
-            "
+            overflow-hidden
+            rounded-xl
+            border border-[#DED4C5]
+            shadow-xl
+            h-[420px]
+            sm:h-[480px]
+            lg:h-[560px]
+            overscroll-contain
+            touch-pan-y
+          "
           >
             <InteractiveMap />
           </motion.div>

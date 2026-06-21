@@ -6,6 +6,7 @@ import {
   staggerContainer,
 } from "@/lib/animations";
 import { Mail } from "lucide-react";
+import Link from "next/link";
 
 const council = [
   "Mayor Sandy Roberson",
@@ -24,18 +25,29 @@ export default function ContactCouncil() {
       id="contact"
       className="
         bg-[#16352A]
-        py-24
-        lg:py-32
+        py-16
+        sm:py-20
+        lg:py-28
+        xl:py-32
+        overflow-hidden
       "
     >
-      <div className="max-w-5xl mx-auto px-6">
+      <div
+        className="
+          max-w-5xl
+          mx-auto
+          px-5
+          sm:px-6
+          lg:px-8
+        "
+      >
         {/* HEADER */}
 
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           className="text-center"
         >
           <p
@@ -44,6 +56,7 @@ export default function ContactCouncil() {
               uppercase
               tracking-[0.25em]
               text-xs
+              sm:text-sm
               font-bold
             "
           >
@@ -56,15 +69,18 @@ export default function ContactCouncil() {
               text-white
               font-serif
               font-bold
-              leading-tight
-              text-4xl
-              md:text-5xl
+              leading-[1.05]
+              text-[clamp(2rem,6vw,3.75rem)]
+              max-w-4xl
+              mx-auto
             "
           >
             Tell Your Council Member:
-            <br />
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
             Rocky Mount Deserves
-            <br />
+            <br className="hidden sm:block" />
+            <span className="sm:hidden"> </span>
             a Fair Deal.
           </h2>
         </motion.div>
@@ -75,22 +91,26 @@ export default function ContactCouncil() {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.2 }}
           className="
-            mt-12
+            mt-10
+            sm:mt-12
             bg-white/[0.05]
             border
             border-white/10
             border-l-4
             border-l-[#C89A3E]
-            p-8
+            backdrop-blur-sm
+            p-6
+            sm:p-8
           "
         >
           <p
             className="
               text-white/85
+              text-base
+              sm:text-lg
               leading-8
-              text-lg
             "
           >
             I support economic development,
@@ -112,12 +132,14 @@ export default function ContactCouncil() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.1 }}
           className="
-            mt-10
-            flex
-            flex-wrap
-            justify-center
+            mt-8
+            sm:mt-10
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-3
             gap-4
           "
         >
@@ -125,14 +147,21 @@ export default function ContactCouncil() {
             <motion.button
               key={member}
               variants={fadeUp}
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.98 }}
               className="
                 border
                 border-white/15
                 text-white
+                text-sm
+                sm:text-base
                 px-5
-                py-3
+                py-4
                 hover:border-[#C89A3E]
-                transition
+                hover:bg-white/[0.03]
+                transition-all
+                duration-300
+                min-h-[60px]
               "
             >
               {member}
@@ -147,25 +176,39 @@ export default function ContactCouncil() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mt-12 text-center"
+          className="mt-10 sm:mt-12 text-center"
         >
-          <button
-            className="
-              inline-flex
-              items-center
-              gap-3
-              bg-[#C89A3E]
-              text-[#16352A]
-              px-8
-              py-4
-              font-semibold
-              hover:scale-[1.02]
-              transition
-            "
-          >
-            <Mail size={18} />
-            Send the Email Now
-          </button>
+          <Link
+  href="#join"
+  className="
+    inline-flex
+    items-center
+    justify-center
+    gap-3
+    w-full
+    sm:w-auto
+    bg-[#C89A3E]
+    text-[#16352A]
+    px-8
+    py-4
+    font-semibold
+    text-base
+    min-h-[58px]
+    transition-all
+    duration-300
+    hover:scale-[1.02]
+    hover:shadow-lg
+  "
+>
+  <Mail
+    size={18}
+    className="shrink-0"
+  />
+
+  <span>
+    Send the Email Now
+  </span>
+</Link>
         </motion.div>
       </div>
     </section>
