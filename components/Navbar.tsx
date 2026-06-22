@@ -93,18 +93,26 @@ export default function Navbar() {
                     font-bold
                     text-[#C89A3E]
                     leading-tight
-                    text-base
-                    lg:text-lg
-                    max-w-[320px]
+                    text-sm
+                    lg:text-base
+                    max-w-[280px]
                   "
                 >
                   Communities United for
                   Fair Development
                 </h1>
 
-                <p className="text-xs text-white/60 mt-1">
-                  Rocky Mount, North Carolina
-                </p>
+                <p
+                className="
+                  text-[11px]
+                  uppercase
+                  tracking-[0.08em]
+                  text-white/60
+                  mt-1
+                "
+              >
+                Rocky Mount, NC
+              </p>
               </div>
             </Link>
 

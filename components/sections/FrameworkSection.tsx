@@ -41,10 +41,10 @@ export default function Framework() {
       id="standards"
       className="
         bg-[#F6F0E6]
-        py-16
-        sm:py-20
-        lg:py-28
-        xl:py-32
+        py-14
+        sm:py-18
+        lg:py-20
+        xl:py-24
         overflow-hidden
       "
     >
@@ -81,12 +81,12 @@ export default function Framework() {
 
           <h2
             className="
-              mt-4
+              mt-3
               text-[#16352A]
               font-serif
               font-bold
               leading-[1.05]
-              text-[clamp(2rem,6vw,3.5rem)]
+              text-[clamp(1.75rem,4vw,2.5rem)]
               max-w-4xl
             "
           >
@@ -98,10 +98,9 @@ export default function Framework() {
 
           <p
             className="
-              mt-6
+              mt-4
               text-gray-700
               text-base
-              sm:text-lg
               leading-8
               max-w-3xl
             "
@@ -115,7 +114,7 @@ export default function Framework() {
 
         {/* Framework Table */}
 
-        <div className="mt-12 sm:mt-14">
+        <div className="mt-10 sm:mt-12">
           {standards.map((item, index) => (
             <motion.div
               key={item.number}
@@ -132,8 +131,8 @@ export default function Framework() {
               className="
                 border-t
                 border-[#D8CFC2]
-                py-8
-                sm:py-10
+                py-7
+                sm:py-9
               "
             >
               <div
@@ -142,9 +141,9 @@ export default function Framework() {
                   grid-cols-1
                   md:grid-cols-[80px_240px_1fr]
                   lg:grid-cols-[90px_280px_1fr]
-                  gap-4
-                  md:gap-6
-                  lg:gap-8
+                  gap-3
+                  md:gap-5
+                  lg:gap-6
                 "
               >
                 {/* Number */}
@@ -152,8 +151,8 @@ export default function Framework() {
                 <div
                   className="
                     text-[#C89A3E]
-                    text-3xl
-                    sm:text-4xl
+                    text-2xl
+                    sm:text-3xl
                     font-black
                     leading-none
                   "

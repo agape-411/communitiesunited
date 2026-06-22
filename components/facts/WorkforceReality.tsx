@@ -60,8 +60,8 @@ export default function JobsWorkforceReality() {
       className="
         bg-[#16352A]
         text-white
-        py-24
-        lg:py-32
+        py-16
+        lg:py-20
       "
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -89,11 +89,11 @@ export default function JobsWorkforceReality() {
 
           <h2
             className="
-              mt-4
+              mt-3
               font-serif
-              text-4xl
-              md:text-5xl
-              lg:text-6xl
+              text-2xl
+              md:text-3xl
+              lg:text-4xl
               font-bold
               leading-tight
             "
@@ -104,7 +104,7 @@ export default function JobsWorkforceReality() {
 
           <p
             className="
-              mt-8
+              mt-6
               text-lg
               leading-8
               text-white/80
@@ -129,7 +129,7 @@ export default function JobsWorkforceReality() {
           whileInView="visible"
           viewport={{ once: true }}
           className="
-            mt-16
+            mt-9
             grid
             sm:grid-cols-2
             xl:grid-cols-4
@@ -159,7 +159,7 @@ export default function JobsWorkforceReality() {
 
               <p
                 className="
-                  mt-5
+                  mt-4
                   text-white/80
                   leading-7
                 "
@@ -185,7 +185,7 @@ export default function JobsWorkforceReality() {
 
         <div
           className="
-            mt-20
+            mt-15
             grid
             lg:grid-cols-2
             gap-14

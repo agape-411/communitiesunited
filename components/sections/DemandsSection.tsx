@@ -41,10 +41,10 @@ export default function Pillars() {
       id="pillars"
       className="
         bg-[#16352A]
-        py-16
-        sm:py-20
-        lg:py-28
-        xl:py-32
+        py-14
+        sm:py-18
+        lg:py-20
+        xl:py-24
         overflow-hidden
       "
     >
@@ -81,12 +81,14 @@ export default function Pillars() {
 
           <h2
             className="
-              mt-4
+              mt-3
               text-white
               font-serif
               font-bold
               leading-[1.05]
-              text-[clamp(2rem,6vw,3.5rem)]
+              text-2xl
+              md:text-3xl
+              lg:text-4xl
               max-w-4xl
             "
           >
@@ -98,11 +100,9 @@ export default function Pillars() {
 
           <p
             className="
-              mt-6
+              mt-4
               text-white/70
               text-base
-              sm:text-lg
-              lg:text-xl
               leading-8
               max-w-3xl
             "
@@ -118,8 +118,8 @@ export default function Pillars() {
 
         <div
           className="
-            mt-12
-            sm:mt-14
+            mt-9
+            sm:mt-11
             grid
             grid-cols-1
             md:grid-cols-2
@@ -170,9 +170,9 @@ export default function Pillars() {
                   text-[#C89A3E]
                   font-serif
                   font-bold
-                  text-[clamp(1.35rem,4vw,1.7rem)]
+                  text-[clamp(1.25rem,3vw,1.75rem)]
                   leading-tight
-                  mb-4
+                  mb-3
                 "
               >
                 {pillar.title}
@@ -191,7 +191,7 @@ export default function Pillars() {
 
               <div
                 className="
-                  mt-6
+                  mt-5
                   pt-5
                   border-t
                   border-white/10

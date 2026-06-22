@@ -35,10 +35,10 @@ export default function OurVoice() {
     <section
       className="
         bg-[#173629]
-        py-16
-        sm:py-20
-        lg:py-28
-        xl:py-32
+        py-12
+        sm:py-18
+        lg:py-20
+        xl:py-24
         overflow-hidden
       "
     >
@@ -76,12 +76,12 @@ export default function OurVoice() {
 
           <h2
             className="
-              mt-4
+              mt-3
               text-white
               font-serif
               font-semibold
               leading-[1.05]
-              text-[clamp(2rem,6vw,4rem)]
+              text-[clamp(1.75rem,4vw,2.5rem)]
               max-w-5xl
             "
           >
@@ -100,8 +100,8 @@ export default function OurVoice() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
           className="
-            mt-12
-            sm:mt-16
+            mt-9
+            sm:mt-12
             grid
             grid-cols-1
             md:grid-cols-2
@@ -142,7 +142,7 @@ export default function OurVoice() {
                   text-[11px]
                   sm:text-xs
                   font-bold
-                  mb-4
+                  mb-3
                 "
               >
                 {item.label}
@@ -155,7 +155,7 @@ export default function OurVoice() {
                   text-white
                   font-serif
                   font-semibold
-                  text-[clamp(1.25rem,3vw,1.5rem)]
+                  text-[clamp(1rem,3vw,1.3rem)]
                   leading-relaxed
                 "
               >

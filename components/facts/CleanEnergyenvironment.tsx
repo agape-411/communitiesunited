@@ -48,8 +48,8 @@ export default function CleanEnergy() {
     <section
       id="energy"
       className="
-        py-24
-        lg:py-32
+        py-15
+        lg:py-20
         bg-[#F9F6F1]
         overflow-hidden
       "
@@ -79,12 +79,12 @@ export default function CleanEnergy() {
 
           <h2
             className="
-              mt-4
+              mt-3
               font-serif
               text-[#16352A]
-              text-4xl
-              md:text-5xl
-              lg:text-6xl
+              text-2xl
+              md:text-3xl
+              lg:text-4xl
               font-bold
               leading-tight
             "
@@ -95,7 +95,7 @@ export default function CleanEnergy() {
 
           <p
             className="
-              mt-8
+              mt-6
               text-lg
               leading-8
               text-gray-700
@@ -120,7 +120,7 @@ export default function CleanEnergy() {
           whileInView="visible"
           viewport={{ once: true }}
           className="
-            mt-16
+            mt-9
             grid
             md:grid-cols-3
             gap-6
@@ -141,20 +141,20 @@ export default function CleanEnergy() {
             >
               <div
                 className="
-                  text-5xl
-                  font-bold
+                  text-4xl
+                  font-semibold
                   text-[#16352A]
                 "
               >
                 {stat.value}
               </div>
 
-              <p className="mt-5 text-gray-700 leading-7">
+              <p className="mt-3 text-gray-700 leading-7">
                 {stat.desc}
               </p>
 
               {stat.source && (
-                <p className="mt-5 text-sm italic text-gray-500">
+                <p className="mt-4 text-sm italic text-gray-500">
                   {stat.source}
                 </p>
               )}
@@ -166,7 +166,7 @@ export default function CleanEnergy() {
 
         <div
           className="
-            mt-20
+            mt-15
             grid
             lg:grid-cols-2
             gap-14

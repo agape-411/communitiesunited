@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function FactsCTA() {
   return (
-    <section className="bg-[#16352A] px-8 py-16 text-center">
+    <section className="bg-[#16352A] px-8 py-9 text-center">
       <div className="max-w-170 mx-auto">
 
         <motion.div
@@ -37,7 +37,7 @@ export default function FactsCTA() {
             Join Us in Demanding One.
           </h2>
 
-          <p className="text-[rgba(255,255,255,0.72)] leading-7 mb-8">
+          <p className="text-[rgba(255,255,255,0.72)] leading-7 mb-6">
             Communities United for Fair Development is
             organizing Rocky Mount residents, workers,
             and business owners to make sure this

@@ -6,7 +6,7 @@ import AnimatedCounter from "../ui/AnimatedCounter";
 
 export default function NationalContext() {
   return (
-    <section className="bg-[#16352A] py-24 lg:py-32">
+    <section className="bg-[#16352A] py-12 lg:py-19">
       <div className="max-w-250 mx-auto px-6">
 
         <motion.div
@@ -18,12 +18,12 @@ export default function NationalContext() {
             National Context
           </p>
 
-          <h2 className="mt-4 text-white font-serif text-[clamp(2.2rem,5vw,3.8rem)] font-bold">
+          <h2 className="mt-4 text-white font-serif text-[clamp(2rem,4vw,3.5rem)] font-bold">
             The Data Center Economy Is Not Slowing Down.
             The Question Is Who Benefits.
           </h2>
 
-          <p className="mt-8 text-white/80 text-lg leading-8">
+          <p className="mt-6 text-white/80 text-lg leading-8">
             The capital being deployed in data center
             infrastructure is measured in the hundreds of
             billions of dollars. Communities that come to
@@ -35,7 +35,7 @@ export default function NationalContext() {
 
         {/* STATS */}
 
-        <div className="mt-16 grid md:grid-cols-3 gap-6">
+        <div className="mt-10 grid md:grid-cols-3 gap-6">
 
           <motion.div
             whileInView={{ opacity: 1, y: 0 }}
@@ -43,18 +43,18 @@ export default function NationalContext() {
             viewport={{ once: true }}
             className="bg-white/5 border border-white/10 p-8"
           >
-            <div className="text-[#E6BC72] text-5xl font-bold">
+            <div className="text-[#E6BC72] text-4xl font-semibold">
               $
               <AnimatedCounter end={375} suffix="B" />
             </div>
 
-            <div className="mt-5 text-white/80 leading-7">
+            <div className="mt-4 text-white/80 leading-7">
               Projected global AI infrastructure spending
               in 2025 alone — the single largest driver of
               data center construction
             </div>
 
-            <div className="mt-5 text-xs italic text-white/40">
+            <div className="mt-4 text-xs italic text-white/40">
               Source: UBS, 2025
             </div>
           </motion.div>
@@ -66,18 +66,18 @@ export default function NationalContext() {
             viewport={{ once: true }}
             className="bg-white/5 border border-white/10 p-8"
           >
-            <div className="text-[#E6BC72] text-5xl font-bold">
+            <div className="text-[#E6BC72] text-4xl font-semibold">
               <AnimatedCounter end={50} />
               %+
             </div>
 
-            <div className="mt-5 text-white/80 leading-7">
+            <div className="mt-4 text-white/80 leading-7">
               Share of US corporate clean energy
               procurement represented by data center
               companies in 2024
             </div>
 
-            <div className="mt-5 text-xs italic text-white/40">
+            <div className="mt-4 text-xs italic text-white/40">
               Source: S&P Global, 2024
             </div>
           </motion.div>
@@ -89,18 +89,18 @@ export default function NationalContext() {
             viewport={{ once: true }}
             className="bg-white/5 border border-white/10 p-8"
           >
-            <div className="text-[#E6BC72] text-5xl font-bold">
+            <div className="text-[#E6BC72] text-4xl font-semibold">
               <AnimatedCounter end={550} />
               %
             </div>
 
-            <div className="mt-5 text-white/80 leading-7">
+            <div className="mt-4 text-white/80 leading-7">
               Increase in data center computing workloads
               2010–2018, while electricity consumption
               grew only 6% — due to efficiency gains
             </div>
 
-            <div className="mt-5 text-xs italic text-white/40">
+            <div className="mt-4 text-xs italic text-white/40">
               Source: DOE / Lawrence Berkeley National Lab
             </div>
           </motion.div>
@@ -111,7 +111,7 @@ export default function NationalContext() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="mt-16 max-w-185"
+          className="mt-10 max-w-185"
         >
           <p className="text-white/80 leading-8">
             North Carolina ranks 9th nationally with 91
@@ -126,7 +126,7 @@ export default function NationalContext() {
             resistance.
           </p>
 
-          <p className="mt-8 text-white/80 leading-8">
+          <p className="mt-5 text-white/80 leading-8">
             Rocky Mount is not competing to be a passive
             host. It is establishing itself as a community
             with the framework, the institutional partners,

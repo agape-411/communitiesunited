@@ -7,6 +7,7 @@ import {
   fadeRight,
   staggerContainer,
 } from "@/lib/animations";
+import { useState } from "react";
 
 const benefits = [
   "Get updates on the development agreement and council vote schedule",
@@ -17,38 +18,86 @@ const benefits = [
 ];
 
 export default function JoinSection() {
+  const [loading, setLoading] = useState(false);
+
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    zip: "",
+    message: "",
+    interests: [] as string[],
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleCheckbox = (value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      interests: prev.interests.includes(value)
+        ? prev.interests.filter((item) => item !== value)
+        : [...prev.interests, value],
+    }));
+  };
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert(
+          "Thank you for joining Communities United for Fair Development!"
+        );
+
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          zip: "",
+          message: "",
+          interests: [],
+        });
+      } else {
+        alert("Unable to submit form. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <section
       id="join"
-      className="
-        bg-[#F6F0E6]
-        py-16
-        sm:py-20
-        lg:py-28
-        xl:py-32
-        overflow-hidden
-      "
+      className="bg-[#F6F0E6] py-14 md:py-18 lg:py-24"
     >
-      <div
-        className="
-          max-w-7xl
-          mx-auto
-          px-5
-          sm:px-6
-          lg:px-8
-          xl:px-10
-        "
-      >
-        <div
-          className="
-            grid
-            lg:grid-cols-[1fr_560px]
-            gap-12
-            lg:gap-16
-            xl:gap-24
-            items-start
-          "
-        >
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-10">
+        <div className="grid lg:grid-cols-[1fr_560px] gap-12 lg:gap-16 xl:gap-24 items-start">
           {/* LEFT */}
 
           <motion.div
@@ -57,63 +106,23 @@ export default function JoinSection() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <p
-              className="
-                text-[#C89A3E]
-                uppercase
-                tracking-[0.25em]
-                text-xs
-                sm:text-sm
-                font-bold
-              "
-            >
+            <p className="text-[#C89A3E] uppercase tracking-[0.25em] text-xs font-bold">
               Join CUFD
             </p>
 
-            <h2
-              className="
-                mt-4
-                text-[#16352A]
-                font-serif
-                font-bold
-                leading-[1.05]
-                text-[clamp(2rem,6vw,4rem)]
-                max-w-4xl
-              "
-            >
+            <h2 className="mt-4 text-[#16352A] font-serif font-bold leading-tight text-2xl md:text-3xl lg:text-4xl">
               Add Your Voice.
-              <br className="hidden sm:block" />
-              <span className="sm:hidden"> </span>
+              <br />
               Rocky Mount Is Listening.
             </h2>
 
-            <p
-              className="
-                mt-6
-                sm:mt-8
-                text-gray-700
-                text-base
-                sm:text-lg
-                leading-8
-                max-w-2xl
-              "
-            >
+            <p className="mt-6 md:mt-8 text-gray-700 text-base md:text-lg leading-8 max-w-2xl">
               The decisions being made today will shape
               jobs, schools, infrastructure, and opportunity
               in Rocky Mount for decades to come.
             </p>
 
-            <p
-              className="
-                mt-5
-                sm:mt-6
-                text-gray-700
-                text-base
-                sm:text-lg
-                leading-8
-                max-w-2xl
-              "
-            >
+            <p className="mt-6 text-gray-700 text-base md:text-lg leading-8 max-w-2xl">
               Join neighbors, workers, parents,
               business owners, and community leaders
               who believe economic development should
@@ -121,22 +130,20 @@ export default function JoinSection() {
               residents through enforceable standards.
             </p>
 
-            {/* BENEFITS */}
-
             <motion.div
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="mt-8 sm:mt-10 space-y-5"
+              className="mt-10 space-y-4"
             >
               {benefits.map((item) => (
                 <motion.div
                   key={item}
                   variants={fadeUp}
-                  className="flex gap-4 items-start"
+                  className="flex gap-4"
                 >
-                  <span className="text-[#C89A3E] font-bold mt-1">
+                  <span className="text-[#C89A3E] font-bold">
                     →
                   </span>
 
@@ -147,28 +154,8 @@ export default function JoinSection() {
               ))}
             </motion.div>
 
-            {/* QUOTE */}
-
-            <div
-              className="
-                mt-10
-                sm:mt-12
-                border-l-4
-                border-[#C89A3E]
-                pl-5
-                sm:pl-6
-              "
-            >
-              <p
-                className="
-                  text-[#16352A]
-                  font-serif
-                  italic
-                  font-medium
-                  leading-relaxed
-                  text-[clamp(1.6rem,4vw,2.2rem)]
-                "
-              >
+            <div className="mt-10 md:mt-12 border-l-4 border-[#C89A3E] pl-5 md:pl-6">
+              <p className="text-[#16352A] font-serif italic text-xl md:text-2xl lg:text-3xl leading-relaxed">
                 Fair terms.
                 <br />
                 Real prosperity.
@@ -185,42 +172,16 @@ export default function JoinSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            whileHover={{
-              y: -4,
-            }}
           >
-            <div
-              className="
-                bg-white
-                border
-                border-[#DED4C5]
-                shadow-sm
-                overflow-hidden
-              "
-            >
+            <div className="bg-white border border-[#DED4C5] shadow-sm overflow-hidden">
               <div className="h-1 bg-[#C89A3E]" />
 
               <div className="p-6 sm:p-8 lg:p-10">
-                <h3
-                  className="
-                    text-[#16352A]
-                    font-serif
-                    font-bold
-                    text-[clamp(1.6rem,4vw,2rem)]
-                  "
-                >
+                <h3 className="text-[#16352A] text-2xl font-semibold">
                   Join the Coalition
                 </h3>
 
-                <p
-                  className="
-                    mt-4
-                    text-gray-600
-                    text-sm
-                    sm:text-base
-                    leading-7
-                  "
-                >
+                <p className="mt-4 text-gray-600 leading-7">
                   Join thousands of residents, workers,
                   parents, business owners, and community
                   leaders committed to ensuring that major
@@ -228,23 +189,12 @@ export default function JoinSection() {
                   protecting our future.
                 </p>
 
-                {/* BENEFITS BOX */}
-
-                <div
-                  className="
-                    mt-6
-                    rounded-sm
-                    bg-[#F6F0E6]
-                    border
-                    border-[#E6DACA]
-                    p-5
-                  "
-                >
+                <div className="mt-6 rounded-sm bg-[#F6F0E6] border border-[#E6DACA] p-5">
                   <p className="text-[#16352A] font-semibold mb-3">
                     As a coalition member you'll receive:
                   </p>
 
-                  <ul className="space-y-3">
+                  <ul className="space-y-2">
                     {[
                       "Development agreement updates",
                       "Council meeting alerts",
@@ -253,13 +203,7 @@ export default function JoinSection() {
                     ].map((item) => (
                       <li
                         key={item}
-                        className="
-                          flex
-                          gap-3
-                          text-gray-700
-                          text-sm
-                          leading-6
-                        "
+                        className="flex gap-3 text-gray-700 text-sm"
                       >
                         <span className="text-[#C89A3E]">
                           →
@@ -271,74 +215,66 @@ export default function JoinSection() {
                   </ul>
                 </div>
 
-                {/* FORM */}
-
-                <form className="mt-8 space-y-5">
+                <form
+                  onSubmit={handleSubmit}
+                  className="mt-8 space-y-5"
+                >
                   <div className="grid sm:grid-cols-2 gap-4">
-                    {[
-                      "First Name",
-                      "Last Name",
-                    ].map((placeholder) => (
-                      <input
-                        key={placeholder}
-                        type="text"
-                        placeholder={placeholder}
-                        className="
-                          border
-                          border-gray-300
-                          px-4
-                          py-3.5
-                          w-full
-                          rounded-none
-                          outline-none
-                          text-base
-                          appearance-none
-                          focus:border-[#C89A3E]
-                          transition-colors
-                        "
-                      />
-                    ))}
+                    <input
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      type="text"
+                      placeholder="First Name"
+                      required
+                      className="border border-gray-300 px-4 py-3 w-full outline-none focus:border-[#C89A3E]"
+                    />
+
+                    <input
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      type="text"
+                      placeholder="Last Name"
+                      required
+                      className="border border-gray-300 px-4 py-3 w-full outline-none focus:border-[#C89A3E]"
+                    />
                   </div>
 
-                  {[
-                    "Email Address",
-                    "Phone Number",
-                    "ZIP Code",
-                  ].map((placeholder) => (
-                    <input
-                      key={placeholder}
-                      type="text"
-                      placeholder={placeholder}
-                      className="
-                        border
-                        border-gray-300
-                        px-4
-                        py-3.5
-                        w-full
-                        rounded-none
-                        outline-none
-                        text-base
-                        appearance-none
-                        focus:border-[#C89A3E]
-                        transition-colors
-                      "
-                    />
-                  ))}
+                  <input
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    type="email"
+                    placeholder="Email Address"
+                    required
+                    className="border border-gray-300 px-4 py-3 w-full outline-none focus:border-[#C89A3E]"
+                  />
 
-                  {/* PARTICIPATION */}
+                  <input
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    type="tel"
+                    placeholder="Phone Number"
+                    className="border border-gray-300 px-4 py-3 w-full outline-none focus:border-[#C89A3E]"
+                  />
 
-                  <div
-                    className="
-                      border
-                      border-[#E6DACA]
-                      p-5
-                    "
-                  >
-                    <p className="text-[#16352A] font-medium mb-4">
+                  <input
+                    name="zip"
+                    value={formData.zip}
+                    onChange={handleChange}
+                    type="text"
+                    placeholder="ZIP Code"
+                    className="border border-gray-300 px-4 py-3 w-full outline-none focus:border-[#C89A3E]"
+                  />
+
+                  <div className="border border-[#E6DACA] p-4">
+                    <p className="text-[#16352A] font-medium mb-3">
                       I'd like to:
                     </p>
 
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       {[
                         "Receive updates",
                         "Attend community meetings",
@@ -347,23 +283,15 @@ export default function JoinSection() {
                       ].map((item) => (
                         <label
                           key={item}
-                          className="
-                            flex
-                            items-center
-                            gap-3
-                            text-sm
-                            text-gray-700
-                            cursor-pointer
-                          "
+                          className="flex items-center gap-3 text-sm text-gray-700"
                         >
                           <input
                             type="checkbox"
-                            className="
-                              h-4
-                              w-4
-                              accent-[#C89A3E]
-                              shrink-0
-                            "
+                            checked={formData.interests.includes(item)}
+                            onChange={() =>
+                              handleCheckbox(item)
+                            }
+                            className="accent-[#C89A3E]"
                           />
 
                           {item}
@@ -373,49 +301,26 @@ export default function JoinSection() {
                   </div>
 
                   <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     rows={4}
                     placeholder="Why are you joining CUFD?"
-                    className="
-                      border
-                      border-gray-300
-                      px-4
-                      py-3
-                      w-full
-                      resize-none
-                      rounded-none
-                      outline-none
-                      appearance-none
-                      focus:border-[#C89A3E]
-                    "
+                    className="border border-gray-300 px-4 py-3 w-full resize-none outline-none focus:border-[#C89A3E]"
                   />
 
                   <button
                     type="submit"
-                    className="
-                      w-full
-                      bg-[#16352A]
-                      text-white
-                      py-4
-                      font-semibold
-                      transition-all
-                      duration-300
-                      hover:bg-[#214737]
-                    "
+                    disabled={loading}
+                    className="w-full bg-[#16352A] text-white py-4 font-semibold transition-all duration-300 hover:bg-[#214737] disabled:opacity-70"
                   >
-                    Join Communities United for Fair Development
+                    {loading
+                      ? "Submitting..."
+                      : "Join Communities United for Fair Development"}
                   </button>
                 </form>
 
-                {/* DISCLOSURE */}
-
-                <div
-                  className="
-                    mt-6
-                    pt-6
-                    border-t
-                    border-[#E5D9CA]
-                  "
-                >
+                <div className="mt-6 pt-6 border-t border-[#E5D9CA]">
                   <p className="text-xs leading-6 text-gray-500">
                     By joining CUFD, you agree to receive
                     updates regarding community meetings,

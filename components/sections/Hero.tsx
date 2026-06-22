@@ -43,9 +43,9 @@ export default function Hero() {
           px-5
           sm:px-6
           lg:px-10
-          py-16
-          sm:py-20
-          lg:py-24
+          py-10
+          sm:py-12
+          lg:py-16
         "
       >
         <div
@@ -65,7 +65,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
             {/* Logo */}
-            <div className="mb-8">
+            <div className="mb-6">
               <Image
                 src="/images/community.png"
                 alt="Communities United for Fair Development logo"
@@ -100,8 +100,8 @@ export default function Hero() {
             {/* Heading */}
             <h1
               className="
-                mt-5
-                text-[clamp(2.5rem,9vw,5.2rem)]
+                mt-4
+                text-[clamp(2.3rem,8vw,5rem)]
                 font-bold
                 leading-[0.95]
                 text-white
@@ -140,10 +140,10 @@ export default function Hero() {
             {/* Supporting Statement */}
             <p
               className="
-                mt-6
+                mt-5
                 max-w-2xl
                 text-base
-                sm:text-lg
+              
                 leading-relaxed
                 text-white/70
                 pl-0
@@ -157,7 +157,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div
               className="
-                mt-8
+                mt-6
                 flex
                 flex-col
                 sm:flex-row
@@ -221,7 +221,7 @@ export default function Hero() {
               duration: 0.8,
               delay: 0.2,
             }}
-            className="mt-10 lg:mt-0"
+            className="mt-8 lg:mt-0"
           >
             <div
               className="
@@ -244,7 +244,7 @@ export default function Hero() {
                   text-sm
                   sm:text-base
                   font-semibold
-                  mb-7
+                  mb-5
                 "
               >
                 What We're Organizing For
@@ -259,7 +259,7 @@ export default function Hero() {
                       gap-4
                       border-b
                       border-white/10
-                      pb-5
+                      pb-4
                       text-white/85
                       leading-relaxed
                     "

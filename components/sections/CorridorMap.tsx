@@ -50,7 +50,7 @@ export default function CorridorMap() {
   return (
     <section
       id="corridor-map"
-      className="bg-[#F6F0E6] py-24 lg:py-32"
+      className="bg-[#F6F0E6] py-15 lg:py-19"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Header */}
@@ -76,13 +76,13 @@ export default function CorridorMap() {
 
           <h2
             className="
-              mt-4
+              mt-3
               text-[#16352A]
               font-serif
               font-bold
-              text-4xl
-              md:text-5xl
-              lg:text-6xl
+              text-2xl
+              md:text-3xl
+              lg:text-4xl
               leading-tight
             "
           >
@@ -91,7 +91,7 @@ export default function CorridorMap() {
             Growth Corridor
           </h2>
 
-          <p className="mt-6 text-gray-700 leading-8 text-lg">
+          <p className="mt-4 text-gray-700 leading-8 text-lg">
             Explore the proposed development area and
             understand the surrounding communities,
             infrastructure, and environmental assets.
@@ -102,7 +102,7 @@ export default function CorridorMap() {
 
         <div
           className="
-            mt-16
+            mt-10
             grid
             lg:grid-cols-[360px_1fr]
             gap-8
@@ -123,7 +123,7 @@ export default function CorridorMap() {
               p-8
             "
           >
-            <div className="h-1 w-20 bg-[#C89A3E] mb-6" />
+            <div className="h-1 w-20 bg-[#C89A3E] mb-4" />
 
             <h3
               className="
@@ -136,7 +136,7 @@ export default function CorridorMap() {
               Community Context
             </h3>
 
-            <div className="mt-8 space-y-8">
+            <div className="mt-6 space-y-8">
               {features.map((feature) => (
                 <div
                   key={feature.title}
@@ -162,7 +162,7 @@ export default function CorridorMap() {
 
             <div
               className="
-                mt-10
+                mt-7
                 border-l-4
                 border-[#C89A3E]
                 pl-5

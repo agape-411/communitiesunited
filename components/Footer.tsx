@@ -47,9 +47,9 @@ export default function Footer() {
           sm:px-6
           lg:px-8
           xl:px-10
-          py-14
-          sm:py-16
-          lg:py-20
+          py-12
+          sm:py-14
+          lg:py-18
         "
       >
         <div
@@ -71,10 +71,10 @@ export default function Footer() {
             <Image
               src="/logo.png"
               alt="Communities United for Fair Development"
-              width={90}
-              height={90}
+              width={60}
+              height={60}
               className="
-                mb-5
+                mb-4
                 w-[70px]
                 h-auto
                 sm:w-[90px]
@@ -87,7 +87,8 @@ export default function Footer() {
                 font-bold
                 text-[#C89A3E]
                 leading-tight
-                text-[clamp(1.75rem,4vw,2.25rem)]
+                text-sm
+                lg:text-base
               "
             >
               Communities United
@@ -97,7 +98,7 @@ export default function Footer() {
 
             <p
               className="
-                mt-5
+                mt-3
                 text-white/70
                 leading-8
                 max-w-md
@@ -111,7 +112,7 @@ export default function Footer() {
 
             <p
               className="
-                mt-6
+                mt-4
                 italic
                 font-serif
                 text-lg
@@ -134,13 +135,13 @@ export default function Footer() {
               className="
                 text-xl
                 font-semibold
-                mb-6
+                mb-4
               "
             >
               Quick Links
             </h3>
 
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.title}>
                   <Link
@@ -172,7 +173,7 @@ export default function Footer() {
               className="
                 text-xl
                 font-semibold
-                mb-6
+                mb-4
               "
             >
               Contact
@@ -214,7 +215,7 @@ export default function Footer() {
                 text-xl
                 font-semibold
                 mt-10
-                mb-5
+                mb-4
               "
             >
               Follow CUFD
@@ -270,8 +271,8 @@ export default function Footer() {
 
         <div
           className="
-            mt-14
-            pt-8
+            mt-10
+            pt-7
             border-t
             border-white/10
             flex

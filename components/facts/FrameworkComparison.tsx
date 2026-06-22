@@ -29,7 +29,7 @@ export default function FrameworkDifference() {
   return (
     <section
       id="difference"
-      className="py-24 lg:py-32 bg-[#F4EFE7]"
+      className="py-15 lg:py-20 bg-[#F4EFE7]"
     >
       <div className="max-w-250 mx-auto px-6">
 
@@ -43,11 +43,11 @@ export default function FrameworkDifference() {
             What Makes Rocky Mount Different
           </p>
 
-          <h2 className="mt-4 font-serif text-[#16352A] text-4xl md:text-5xl font-bold">
+          <h2 className="mt-3 font-serif text-[#16352A] text-2xl md:text-3xl font-bold">
             A Framework Changes Everything.
           </h2>
 
-          <p className="mt-8 text-gray-700 leading-8 text-lg">
+          <p className="mt-6 text-gray-700 leading-8 text-lg">
             Most data center deals in North Carolina have
             been negotiated without a community benefit
             framework — leaving communities as passive hosts
@@ -56,7 +56,7 @@ export default function FrameworkDifference() {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid lg:grid-cols-2 gap-8">
+        <div className="mt-9 grid lg:grid-cols-2 gap-8">
 
           {/* WITHOUT */}
 
@@ -72,7 +72,7 @@ export default function FrameworkDifference() {
                 ✕ Without a Framework
               </h3>
 
-              <ul className="mt-8 space-y-5">
+              <ul className="mt-6 space-y-5">
                 {withoutFramework.map((item) => (
                   <li
                     key={item}
@@ -107,7 +107,7 @@ export default function FrameworkDifference() {
                 ✓ With the Grid-Positive Framework
               </h3>
 
-              <ul className="mt-8 space-y-5">
+              <ul className="mt-6 space-y-5">
                 {withFramework.map((item) => (
                   <li
                     key={item}
@@ -137,7 +137,7 @@ export default function FrameworkDifference() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-14"
+          className="mt-10"
         >
           <div
             className="
@@ -161,7 +161,7 @@ export default function FrameworkDifference() {
             </p>
           </div>
 
-          <p className="mt-4 text-sm italic text-gray-500">
+          <p className="mt-3 text-sm italic text-gray-500">
             Source: Business North Carolina, 2025
           </p>
         </motion.div>

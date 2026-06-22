@@ -25,10 +25,10 @@ export default function ContactCouncil() {
       id="contact"
       className="
         bg-[#16352A]
-        py-16
-        sm:py-20
-        lg:py-28
-        xl:py-32
+        py-12
+        sm:py-18
+        lg:py-20
+        xl:py-24
         overflow-hidden
       "
     >
@@ -70,7 +70,7 @@ export default function ContactCouncil() {
               font-serif
               font-bold
               leading-[1.05]
-              text-[clamp(2rem,6vw,3.75rem)]
+              text-[clamp(1.5rem,4vw,2.25rem)]
               max-w-4xl
               mx-auto
             "

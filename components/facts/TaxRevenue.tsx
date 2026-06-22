@@ -38,7 +38,7 @@ const statCards = [
 ]
 export default function TaxRevenue() {
   return (
-    <section id='tax' className='bg-[#F7F3EC] py-24 lg:py-32 overflow-hidden'>
+    <section id='tax' className='bg-[#F7F3EC] py-12 lg:py-20 overflow-hidden'>
       <div className='max-w-250 mx-auto px-6'>
         {/* Header */}
 
@@ -65,8 +65,8 @@ export default function TaxRevenue() {
             className='
               font-serif
               text-[#16352A]
-              text-[clamp(2.2rem,5vw,3.8rem)]
-              md:text-5xl
+              text-[clamp(2rem,4vw,3.6rem)]
+              md:text-3xl
               font-bold
               leading-tight
               max-w-4xl
@@ -78,7 +78,7 @@ export default function TaxRevenue() {
 
           <p
             className='
-              mt-8
+              mt-5
               text-[#3E3E3E]
               text-lg
               leading-8
@@ -95,7 +95,7 @@ export default function TaxRevenue() {
 
         {/* Stats Cards */}
 
-        <div className='grid md:grid-cols-3 gap-6 mt-14'>
+        <div className='grid md:grid-cols-3 gap-6 mt-9'>
           {statCards.map((card, index) => (
             <motion.div
               key={card.id}

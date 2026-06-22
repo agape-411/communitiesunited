@@ -47,10 +47,10 @@ export default function AboutCUFD() {
       id="about"
       className="
         bg-[#F6F0E6]
-        py-16
-        sm:py-20
-        lg:py-28
-        xl:py-32
+        py-12
+        sm:py-18
+        lg:py-20
+        xl:py-24
         overflow-hidden
       "
     >
@@ -97,12 +97,12 @@ export default function AboutCUFD() {
 
             <h2
               className="
-                mt-4
+                mt-3
                 text-[#16352A]
                 font-serif
                 font-bold
                 leading-[1.05]
-                text-[clamp(2rem,6vw,4rem)]
+                text-[clamp(1.75rem,4vw,2.5rem)]
                 max-w-3xl
               "
             >

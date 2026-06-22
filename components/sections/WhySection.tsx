@@ -53,9 +53,9 @@ export default function WhySection() {
         id="why"
         className="
           bg-[#F6F0E6]
-          py-16
-          sm:py-20
-          lg:py-28
+          py-14
+          sm:py-16
+          lg:py-20
           overflow-hidden
         "
       >
@@ -102,7 +102,9 @@ export default function WhySection() {
               text-[#16352A]
               font-bold
               leading-tight
-              text-[clamp(2.rem,5vw,3.6rem)]
+              text-2xl
+              md:text-3xl
+              lg:text-4xl
               max-w-4xl
             "
           >
@@ -123,8 +125,8 @@ export default function WhySection() {
             }}
             className="
               relative
-              mt-8
-              sm:mt-10
+              mt-6
+              sm:mt-8
               border-l-[5px]
               border-[#C89A3E]
               bg-white
@@ -167,7 +169,7 @@ export default function WhySection() {
             to capture it.
 
             <br />
-            <br />
+            
 
             But it comes to communities like ours whether we
             organize or not, and the only real question is
@@ -182,7 +184,7 @@ export default function WhySection() {
             fighting.
 
             <br />
-            <br />
+            
 
             We are here to make sure that if one is built on
             our land, our water is protected, our bills are
@@ -192,7 +194,7 @@ export default function WhySection() {
             our support.
 
             <br />
-            <br />
+            
 
             That is how an overlooked community stops being a
             passive host and starts capturing its fair share.
@@ -204,7 +206,7 @@ export default function WhySection() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
             className="
-              mt-4
+              mt-5
               text-xs
               sm:text-sm
               uppercase
@@ -220,8 +222,8 @@ export default function WhySection() {
 
           <div
             className="
-              mt-12
-              sm:mt-16
+              mt-9
+              sm:mt-12
               grid
               grid-cols-1
               md:grid-cols-2
@@ -257,9 +259,9 @@ export default function WhySection() {
                     text-[#16352A]
                     font-serif
                     font-bold
-                    text-[clamp(1.4rem,4vw,2rem)]
+                    text-[clamp(1.25rem,3vw,1.75rem)]
                     leading-tight
-                    mb-4
+                    mb-3
                   "
                 >
                   {card.title}
