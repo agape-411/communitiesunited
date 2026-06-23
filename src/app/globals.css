@@ -18,3 +18,14 @@ body {
 .section-container {
   @apply max-w-7xl mx-auto px-6;
 }
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+}

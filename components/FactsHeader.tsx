@@ -38,7 +38,7 @@ export default function FactsHeader() {
           className="
             max-w-[1600px]
             mx-auto
-            h-[72px]
+            h-18
             px-4
             sm:px-6
             lg:px-8
@@ -76,9 +76,9 @@ export default function FactsHeader() {
                   font-bold
                   text-[#C8963E]
                   leading-tight
-                  text-sm
-                  lg:text-base
-                  max-w-[280px]
+                  text-xs
+                  lg:text-sm
+                  max-w-70
                 "
               >
                 Communities United for
@@ -110,7 +110,7 @@ export default function FactsHeader() {
                   relative
                   text-white/80
                   uppercase
-                  tracking-[0.05em]
+                  tracking-wider
                   text-sm
                   font-semibold
                   hover:text-[#E8B86D]
@@ -118,7 +118,7 @@ export default function FactsHeader() {
                   after:absolute
                   after:left-0
                   after:-bottom-1
-                  after:h-[2px]
+                  after:h-0.5
                   after:w-0
                   after:bg-[#C8963E]
                   after:transition-all
@@ -178,7 +178,7 @@ export default function FactsHeader() {
             className="
               fixed
               inset-0
-              z-[60]
+              z-60
               bg-[#1B3A2D]
               md:hidden
             "

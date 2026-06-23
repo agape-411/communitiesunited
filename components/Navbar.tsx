@@ -58,7 +58,7 @@ export default function Navbar() {
         >
           <div
             className="
-              h-[72px]
+              h-18
               flex
               items-center
               justify-between
@@ -93,9 +93,9 @@ export default function Navbar() {
                     font-bold
                     text-[#C89A3E]
                     leading-tight
-                    text-sm
-                    lg:text-base
-                    max-w-[280px]
+                    text-xs
+                    lg:text-sm
+                    max-w-70
                   "
                 >
                   Communities United for
@@ -135,7 +135,7 @@ export default function Navbar() {
                     after:absolute
                     after:left-0
                     after:-bottom-1
-                    after:h-[2px]
+                    after:h-0.5
                     after:w-0
                     after:bg-[#C89A3E]
                     after:transition-all
@@ -199,7 +199,7 @@ export default function Navbar() {
             className="
               fixed
               inset-0
-              z-[60]
+              z-60
               bg-[#16352A]
               lg:hidden
             "
