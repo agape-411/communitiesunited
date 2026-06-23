@@ -101,7 +101,7 @@ export default function FactsHeader() {
 
           {/* Desktop Nav */}
 
-          <div className="hidden md:flex items-center gap-7">
+          <div className="hidden xl:flex items-center gap-6">
             {links.map((link) => (
               <Link
                 key={link.label}
@@ -155,7 +155,7 @@ export default function FactsHeader() {
           <button
             aria-label="Toggle Menu"
             onClick={() => setOpen(!open)}
-            className="md:hidden text-white"
+            className="xl:hidden text-white"
           >
             {open ? (
               <X size={28} />
