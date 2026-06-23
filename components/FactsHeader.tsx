@@ -24,8 +24,10 @@ export default function FactsHeader() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
         className="
-          sticky
+          fixed
           top-0
+          left-0
+          right-0
           z-50
           bg-[#1B3A2D]/95
           backdrop-blur-md
