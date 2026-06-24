@@ -22,7 +22,10 @@ export default function Hero() {
         relative
         overflow-hidden
         bg-[#16352A]
-        min-h-[100svh]
+        min-h-[calc(100vh-72px)]
+        md:min-h-[calc(100dvh-72px)]
+        py-14
+        lg:py-20
         flex
         items-center
       "

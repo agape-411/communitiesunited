@@ -182,7 +182,7 @@ export default function FactsHeader() {
               inset-0
               z-60
               bg-[#1B3A2D]
-              md:hidden
+              xl:hidden
             "
           >
             <div className="flex justify-end p-6">
@@ -214,7 +214,9 @@ export default function FactsHeader() {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className="
-                    text-2xl
+                    text-xl
+                    sm:text-2xl
+                    lg:text-3xl
                     font-serif
                     text-white
                     hover:text-[#C8963E]
