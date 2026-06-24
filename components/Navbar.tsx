@@ -222,11 +222,16 @@ export default function Navbar() {
               className="
                 flex
                 flex-col
-                justify-center
                 items-center
-                h-[80vh]
-                gap-8
+                justify-start
+                gap-6
                 px-6
+                pt-12
+                sm:pt-14
+                md:pt-20
+                pb-10
+                min-h-[calc(100dvh-72px)]
+                overflow-y-auto
               "
             >
               {links.map((item) => (
@@ -235,8 +240,9 @@ export default function Navbar() {
                   href={item.href}
                   onClick={() => setOpen(false)}
                   className="
-                    text-2xl
-                    sm:text-3xl
+                    text-xl
+                    sm:text-2xl
+                    lg:text-3xl
                     font-serif
                     text-white
                     hover:text-[#C89A3E]

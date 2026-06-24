@@ -199,14 +199,19 @@ export default function FactsHeader() {
 
             <div
               className="
-                flex
-                flex-col
-                justify-center
-                items-center
-                h-[80vh]
-                gap-8
-                px-6
-              "
+              flex
+              flex-col
+              items-center
+              justify-start
+              gap-6
+              px-6
+              pt-12
+              sm:pt-14
+              md:pt-20
+              pb-10
+              min-h-[calc(100dvh-72px)]
+              overflow-y-auto
+            "
             >
               {links.map((link) => (
                 <Link
