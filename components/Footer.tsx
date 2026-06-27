@@ -24,7 +24,7 @@ const quickLinks = [
   },
   {
     title: "Join CUFD",
-    href: "#join",
+    href: "/join",
   },
   {
     title: "Contact Council",

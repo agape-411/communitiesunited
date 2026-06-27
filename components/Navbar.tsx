@@ -17,7 +17,7 @@ const links = [
   },
   {
     label: "Join CUFD",
-    href: "#join",
+    href: "/join",
   },
   {
     label: "Contact Council",
@@ -109,8 +109,8 @@ export default function Navbar() {
                   text-[11px]
                   uppercase
                   tracking-[0.08em]
-                  text-white/60
-                  mt-1
+                  text-white/80
+                  mt-1  
                 "
               >
                 Rocky Mount, NC
@@ -153,7 +153,7 @@ export default function Navbar() {
 
             <div className="flex items-center gap-4">
               <Link
-                href="#join"
+                href="/join"
                 className="
                   hidden
                   md:inline-flex
@@ -255,7 +255,7 @@ export default function Navbar() {
               ))}
 
               <Link
-                href="#join"
+                href="/join"
                 onClick={() => setOpen(false)}
                 className="
                   mt-6

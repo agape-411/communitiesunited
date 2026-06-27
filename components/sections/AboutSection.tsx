@@ -160,6 +160,10 @@ export default function AboutCUFD() {
                 protections written into the agreement and
                 enforced after the ribbon is cut.
               </p>
+
+              <p>
+                CUFD was organized with support from Garvey Labs LLC, a community-side strategic advisory firm that works exclusively on the public and community side of data center negotiations — not the developer side. Garvey Labs was engaged by Carolinas Gateway Partnership to ensure Rocky Mount came to this negotiation with a framework. CUFD is the community voice that holds the resulting agreement accountable.
+              </p>
             </div>
           </motion.div>
 

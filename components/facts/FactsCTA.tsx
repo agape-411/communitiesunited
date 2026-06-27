@@ -50,7 +50,7 @@ export default function FactsCTA() {
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-4">
 
             <Link
-              href="/#join"
+              href="/join"
               className="
                 inline-block
                 uppercase

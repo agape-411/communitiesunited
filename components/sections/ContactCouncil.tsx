@@ -22,7 +22,7 @@ const council = [
 export default function ContactCouncil() {
   return (
     <section
-      id="contact"
+      id="council"
       className="
         bg-[#16352A]
         py-12
@@ -179,35 +179,35 @@ export default function ContactCouncil() {
           className="mt-10 sm:mt-12 text-center"
         >
           <Link
-  href="#join"
-  className="
-    inline-flex
-    items-center
-    justify-center
-    gap-3
-    w-full
-    sm:w-auto
-    bg-[#C89A3E]
-    text-[#16352A]
-    px-8
-    py-4
-    font-semibold
-    text-base
-    min-h-[58px]
-    transition-all
-    duration-300
-    hover:scale-[1.02]
-    hover:shadow-lg
-  "
->
-  <Mail
-    size={18}
-    className="shrink-0"
-  />
+          href="/join"
+          className="
+            inline-flex
+            items-center
+            justify-center
+            gap-3
+            w-full
+            sm:w-auto
+            bg-[#C89A3E]
+            text-[#16352A]
+            px-8
+            py-4
+            font-semibold
+            text-base
+            min-h-[58px]
+            transition-all
+            duration-300
+            hover:scale-[1.02]
+            hover:shadow-lg
+          "
+        >
+          <Mail
+            size={18}
+            className="shrink-0"
+          />
 
-  <span>
-    Send the Email Now
-  </span>
+          <span>
+            Send the Email Now
+          </span>
 </Link>
         </motion.div>
       </div>

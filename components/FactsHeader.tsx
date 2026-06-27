@@ -132,7 +132,7 @@ export default function FactsHeader() {
             ))}
 
             <Link
-              href="/#join"
+              href="/join"
               className="
                 inline-flex
                 items-center
@@ -234,7 +234,7 @@ export default function FactsHeader() {
               ))}
 
               <Link
-                href="/#join"
+                href="/join"
                 onClick={() => setOpen(false)}
                 className="
                   mt-6

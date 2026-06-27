@@ -55,7 +55,7 @@ export default function FactsHero() {
           relative overflow-hidden
           bg-[#1B3A2D]
           text-center
-          px-8 py-24 lg:py-26
+          px-8 py-26 lg:py-28
         "
       >
         {/* Vertical grid lines */}

@@ -168,7 +168,7 @@ export default function Hero() {
               "
             >
               <Link
-                href="#join"
+                href="/join"
                 className="
                   w-full
                   sm:w-auto
