@@ -19,7 +19,7 @@ export default function JoinPage() {
     <main className='bg-[#F6F0E6] min-h-screen'>
       {/* HERO */}
 
-      <section id='join' className='bg-[#16352A] text-white py-22 lg:py-28'>
+      <section id='join' className='bg-[#16352A] text-white py-18 lg:py-25'>
         <div className='max-w-7xl mx-auto px-6 lg:px-10'>
           <button
             onClick={() => router.back()}
@@ -30,7 +30,7 @@ export default function JoinPage() {
               text-white/80
               hover:text-[#C89A3E]
               transition-colors
-              mb-10
+              mb-7
               text-sm
               font-semibold
               uppercase
@@ -57,7 +57,7 @@ export default function JoinPage() {
 
             <h1
               className='
-                mt-6
+                mt-5
                 font-serif
                 font-bold
                 text-4xl
@@ -72,7 +72,7 @@ export default function JoinPage() {
 
             <p
               className='
-                mt-8
+                mt-6
                 text-lg
                 text-white/80
                 max-w-3xl
