@@ -98,9 +98,9 @@ export default function Navbar() {
                     font-serif
                     font-bold
                     text-[#C89A3E]
-                    leading-tight
+                    leading-[1.15]
                     text-xs
-                    lg:text-sm
+                    lg:text-[13px]
                     max-w-70
                   "
                 >
@@ -109,39 +109,40 @@ export default function Navbar() {
                 </h1>
 
                 <p
-                className="
-                  text-[11px]
-                  uppercase
-                  tracking-[0.08em]
-                  text-white/80
-                  mt-1  
-                "
-              >
-                Rocky Mount, NC
-              </p>
+                  className="
+                    text-[9px]
+                    uppercase
+                    tracking-[0.14em]
+                    text-white/65
+                    mt-1
+                  "
+                >
+                  Rocky Mount, NC
+                </p>
               </div>
             </Link>
 
             {/* DESKTOP NAV */}
 
-            <nav className="hidden lg:flex items-center gap-8">
+            <nav className="hidden lg:flex items-center gap-6">
               {links.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
                   className="
                     relative
-                    text-sm
+                    text-[11px]
+                    font-medium
                     uppercase
-                    tracking-[0.08em]
-                    text-white/75
+                    tracking-[0.12em]
+                    text-white/80
                     hover:text-[#C89A3E]
                     transition-colors
                     duration-300
                     after:absolute
                     after:left-0
                     after:-bottom-1
-                    after:h-0.5
+                    after:h-px
                     after:w-0
                     after:bg-[#C89A3E]
                     after:transition-all
