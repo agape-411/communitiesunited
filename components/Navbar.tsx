@@ -9,19 +9,23 @@ import { motion, AnimatePresence } from "framer-motion";
 const links = [
   {
     label: "Why This Matters",
-    href: "#why",
+    href: "/#why",
   },
   {
     label: "Our Demands",
-    href: "#pillars",
+    href: "/#pillars",
   },
   {
     label: "Join CUFD",
     href: "/join",
   },
   {
+    label: "Data Centers",
+    href: "/technology-campus",
+  },
+  {
     label: "Contact Council",
-    href: "#contact",
+    href: "/#contact",
   },
   {
     label: "The Facts",
